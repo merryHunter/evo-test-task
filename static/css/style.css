@@ -1,0 +1,33 @@
+.container{
+    text-align: center;
+    padding-top: 3em;
+}
+
+
+.login-form{
+    text-align: center;
+    width: 20%;
+    border: medium solid gray;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 10px 10px 30px;
+}
+.my-label{
+    font-size: large;
+    font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    padding: 5px;
+    margin: 5px;
+
+}
+
+input{
+    padding: 5px;
+    margin: 3px;
+    font-size: large;
+}
+
+.submit-btn{
+    font-size: large;
+    padding: 5px;
+        margin: 3px;
+}

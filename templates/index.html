@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Holly Bob</title>
+    <script src="/static/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Holy Bob</title>
 </head>
 <body>
-Hello
+<div id="js-container" class="container">
+    <form class="login-form">
+        <label id="name-label" class="my-label">Ваше Имя?</label> <br>
+        <input id="name" type="text" size="30"/> <br>
+        <button id="js-submit-btn" class="submit-btn" type="button" >ОК</button>
+    </form>
+</div>
+<script type="text/javascript">
+    $('#js-submit-btn').on('click', function(){
+        var name = $('#name').val();
+
+        $.ajax({
+            type: "POST",
+            url: "/login",
+            data: JSON.stringify({name: name}),
+            contentType: 'application/json; charset=UTF-8',
+            success: function(e){
+                $('#name-label').hide();
+                $('#name').hide();
+                $('#js-submit-btn').hide();
+                var title = '<h4 class="my-label"> Рад тебя видеть снова, ' + e.epithet + ' '+ name +'</h4>';
+                $('.login-form').append(title);
+            },
+            error: function(e){
+                alert("Произошла ошибка :(")
+            }
+        })
+
+    });
+</script>
 </body>
 </html>
